@@ -1,0 +1,30 @@
+{
+  "name": "paypal-payment-integration",
+  "version": "1.0.0",
+  "description": "Payment-gateway",
+  "main": "server.js",
+  "scripts": {
+    "dev": "NODE_ENV=development nodemon ./server.js",
+    "server" : "node ./server.js",
+    "test": "mocha -b ./test || exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Paypal-payment-integration"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.3",
+    "nodemon": "^2.0.2",
+    "paypal-rest-sdk": "^1.8.1"
+  },
+  "devDependencies": {
+    "assert": "^2.0.0",
+    "chai": "^4.2.0",
+    "mocha": "^7.0.1"
+  }
+}
