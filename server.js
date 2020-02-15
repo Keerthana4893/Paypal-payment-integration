@@ -1,7 +1,6 @@
 'use strict';
 
 const config = require('./config')
-const form = require('./lib/validate');
 const payment = require('./lib/payment');
 const db  = require('./lib/db');
 const bodyParser = require('body-parser');
@@ -11,10 +10,8 @@ const app = express();
 app.use(express.static(__dirname + '/views'));
 app.use(bodyParser.urlencoded({extended:true}))
 
-
-app.use('/checkout', form.checkValid);
-app.post('/checkout', (req, res) => {
-  let opts = {
+app.post('/pay', (req, res) => {
+  let option = {
       ccName: req.body.cc_name,
       ccNumber: req.body.cc_number,
       expirationMonth: req.body.cc_expiry_month,
@@ -25,7 +22,7 @@ app.post('/checkout', (req, res) => {
   }
   
   try{
-    var pay = payment(opts);
+    var pay = payment(option);
   }catch(e){
     return res.status(401).send(e);
   }
@@ -35,7 +32,7 @@ app.post('/checkout', (req, res) => {
       let paymentStatus = err ? 'Failed' : 'Success';
       let data = {
         price: req.body.price,
-        currency: req.body.currency,
+        currency: req.body.Currency_type,
         fullName: req.body.full_name,
         status: paymentStatus,
         response: err || result
