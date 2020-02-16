@@ -21,7 +21,7 @@
     "mongodb": "^3.5.3",
     "nodemon": "^2.0.2",
     "paypal-rest-sdk": "^1.8.1"
-  },
+  }
   "devDependencies": {
     "assert": "^2.0.0",
     "chai": "^4.2.0",
