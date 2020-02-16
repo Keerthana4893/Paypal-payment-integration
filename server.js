@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.static(__dirname + '/views'));
 app.use(bodyParser.urlencoded({extended:true}))
-
+app.use('/pay', form.checkValid);
 app.post('/pay', (req, res) => {
   let option = {
       ccName: req.body.cc_name,
