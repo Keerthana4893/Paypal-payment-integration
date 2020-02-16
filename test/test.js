@@ -61,3 +61,43 @@ describe('Redirecting payment gateway', ()=>{
     assert.equal(paymentGateway, 'paypal')
   }) 
 });
+describe('Checking the data from the input', ()=>{
+  it('Name is valid', ()=>{
+    assert.equal(form.validName('John Doe'), true)  
+  })  
+
+  it('Name is invalid', ()=>{
+    assert.equal(form.validName('John*^'), false)
+  })
+
+  it('Valid credit card CCV', ()=>{
+    assert.equal(form.validCvv(614), true)
+  })
+
+  it('Invalid credit card CCV', ()=>{
+    assert.equal(form.validCvv(30218), false)
+  })
+
+  it('Check for valid expiry month', ()=>{
+    assert.equal(form.validExpiryMonth('08'), true)
+  })
+   it('Check for invalid expirty month', ()=>{
+    assert.equal(form.validExpiryMonth('26'), false)
+  })
+
+  it('Check for valid expiry year', ()=>{
+    assert.equal(form.validExpiryYear('2025'), true)
+  })
+
+  it('Check for invalid expiry year', ()=>{
+    assert.equal(form.validExpiryYear('2034'), false)
+  })
+
+  it('Valid credit card should return true', ()=>{
+    assert.equal(form.validCreditCard('378282246310005'), true)
+  })
+
+  it('Invalid credit card should return false', ()=>{
+    assert.equal(form.validCreditCard('378282246310009'), false)
+  })
+})
