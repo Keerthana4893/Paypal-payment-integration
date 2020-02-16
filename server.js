@@ -1,6 +1,7 @@
 'use strict';
 
 const config = require('./config');
+const form = require('./lib/val');
 const payment = require('./lib/payment');
 const db  = require('./lib/db');
 const bodyParser = require('body-parser');
