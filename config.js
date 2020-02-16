@@ -1,5 +1,4 @@
 'use strict';
-
 const config = {
   development: {
     port: 4023,
