@@ -12,7 +12,7 @@
     <legend> Order details </legend>
   <p> <label> Amount </label> 
         <input type = "checkbox"
-    name = "Amount" value = "amount"> 100.00 </p>
+    name = "Amount" value = "price"> 100.00 </p>
 <p>
     <div>
   <label> Currency </label>
@@ -43,8 +43,31 @@
 <p>
     <div>
   <label> Credit card expiration </label>
-  <input type="text" id="cc_exp" value="Expiration month/year(MM/YYYY)">
-  </div>
+   <select name="cc_expiry_month">
+        <option> MM </option>
+        <option value="01"> 01 </option>
+        <option value="02"> 02 </option>
+        <option value="03"> 03 </option>
+        <option value="04"> 04 </option>
+        <option value="05"> 05 </option>
+        <option value="06"> 06 </option>
+        <option value="07"> 07 </option>
+        <option value="08"> 08 </option>
+        <option value="09"> 09 </option>
+        <option value="10"> 10 </option>
+        <option value="11"> 11 </option>
+        <option value="12"> 12 </option>
+      </select>
+      <select name="cc_expiry_year">
+        <option> YYYY </option>
+        <option value="2021"> 2021 </option>
+        <option value="2022"> 2022 </option>
+        <option value="2023"> 2023 </option>
+        <option value="2024"> 2024 </option>
+        <option value="2025"> 2025 </option>
+        <option value="2026"> 2026 </option>
+      </select>
+</div>
 </p>
 <p>
     <div>
