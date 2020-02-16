@@ -14,11 +14,11 @@ app.use('/pay', form.checkValid);
 app.post('/pay', (req, res) => {
   let option = {
       ccName: req.body.cc_name,
-      ccNumber: req.body.cc_number,
+      ccNumber: req.body.cc_num,
       expirationMonth: req.body.cc_expiry_month,
       expirationYear: req.body.cc_expiry_year,
-      cvv: req.body.cc_cvv,
-      currency: req.body.currency,
+      cvv: req.body.cvv,
+      currency: req.body.Currency_type,
       amount: req.body.price
   }
   
@@ -34,7 +34,7 @@ app.post('/pay', (req, res) => {
       let data = {
         price: req.body.price,
         currency: req.body.Currency_type,
-        fullName: req.body.full_name,
+        fullName: req.body.name,
         status: paymentStatus,
         response: err || result
       };
