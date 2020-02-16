@@ -3,7 +3,7 @@
 const assert = require('chai').assert;
 const expect = require('chai').expect;
 const util = require('./../lib/util');
-const form = require('./../lib/validate');
+const form = require('./../lib/val');
 
 describe('Credit card type', ()=>{
   it('Should be a valid american express', ()=>{
